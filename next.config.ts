@@ -1,14 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ['raw.githubusercontent.com'], // utile per immagini Pokémon
-  },
-  experimental: {
-    appDir: true, // se stai usando la nuova struttura /app
-  },
-}
 
-module.exports = nextConfig
-// module.exports = nextConfig --- IGNORE ---
+  images: {
+    domains: ['raw.githubusercontent.com', 'assets.pokemon.com'],
+  },
+};
+
+export default nextConfig;
