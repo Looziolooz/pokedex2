@@ -1,5 +1,7 @@
-@import "tailwindcss";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Jersey+M54&display=swap');
 
 :root {
   --background: #ffffff;
