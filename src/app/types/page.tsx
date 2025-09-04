@@ -1,6 +1,7 @@
 import TypeBadge from "../components/ui/TypeBadge";
 import { POKEMON_TYPES } from "@/lib/data/constants";
 
+
 export const metadata = {
   title: 'Pokémon Types - Pokédx',
   description: 'Browse Pokémon by their types. Discover Fire, Water, Grass, Electric, and more types.',
