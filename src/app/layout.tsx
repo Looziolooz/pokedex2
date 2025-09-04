@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Jaldi, Jersey_10 } from "next/font/google";
+import { Jaldi } from "next/font/google";
 
 import "./globals.css";
 import Header from "../app/components/server/Header";
@@ -11,7 +11,7 @@ const jaldi = Jaldi({
   variable: "--font-jaldi"
 });
 
-const jersey = Jersey_10({
+const jersey = Jaldi({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-jersey"
