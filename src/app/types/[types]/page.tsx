@@ -4,7 +4,7 @@ import PokemonCard from "../../components/ui/PokemonCard";
 import TypeBadge from "../../components/ui/TypeBadge";
 import { fetchPokemonByType } from "@/lib/data/pokemon";
 import { POKEMON_TYPES } from "@/lib/data/constants";
-import { PokemonTypeName } from "@/lib/types/pokemon";
+import { PokemonTypeName } from "../../../lib/types/pokemon";
 
 interface TypePageProps {
   params: { type: string };
