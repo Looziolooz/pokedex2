@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import PokemonCard from "../../components/ui/PokemonCard";
 import { fetchPokemon, fetchPokemonSpecies } from "@/lib/data/pokemon";
-import { TYPE_COLORS } from "@/lib/data/constants";
+
 
 interface PokemonDetailPageProps {
   params: { id: string };
@@ -81,93 +80,6 @@ export default async function PokemonDetailPage({ params }: PokemonDetailPagePro
               </div>
             </div>
           </div>
-
-          {/* Types */}
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Types</h3>
-            <div className="flex gap-3">
-              {pokemon.types.map((type, index) => (
-                <Link
-                  key={index}
-                  href={`/types/${type.type.name}`}
-                  className={`px-4 py-2 rounded-full text-white font-semibold hover:scale-105 transition-transform ${
-                    TYPE_COLORS[type.type.name] || "bg-gray-400"
-                  }`}
-                >
-                  {type.type.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Base Stats</h3>
-            <div className="space-y-3">
-              {pokemon.stats.map((stat) => (
-                <div key={stat.stat.name} className="flex items-center gap-4">
-                  <div className="w-24 text-sm font-medium capitalize">
-                    {stat.stat.name.replace('-', ' ')}
-                  </div>
-                  <div className="w-12 text-right font-bold">
-                    {stat.base_stat}
-                  </div>
-                  <div className="flex-1 bg-gray-200 rounded-full h-2">
-                    <div
-                      className="bg-gradient-to-r from-purple-500 to-blue-500 h-2 rounded-full transition-all duration-500"
-                      style={{ width: `${Math.min((stat.base_stat / 255) * 100, 100)}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Total Stats */}
-            <div className="mt-4 pt-4 border-t border-gray-200">
-              <div className="flex justify-between items-center font-bold text-lg">
-                <span>Total:</span>
-                <span className="text-purple-600">
-                  {pokemon.stats.reduce((sum, stat) => sum + stat.base_stat, 0)}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Abilities */}
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Abilities</h3>
-            <div className="flex flex-wrap gap-2">
-              {pokemon.abilities.map((ability, index) => (
-                <span
-                  key={index}
-                  className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    ability.is_hidden
-                      ? "bg-yellow-100 text-yellow-800 border border-yellow-300"
-                      : "bg-blue-100 text-blue-800 border border-blue-300"
-                  }`}
-                >
-                  {ability.ability.name.replace('-', ' ')}
-                  {ability.is_hidden && " (Hidden)"}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Official Artwork */}
-          {pokemon.sprites.other?.['official-artwork']?.front_default && (
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Official Artwork</h3>
-              <div className="flex justify-center">
-                <Image
-                  src={pokemon.sprites.other['official-artwork'].front_default}
-                  width={300}
-                  height={300}
-                  alt={`${pokemon.name} official artwork`}
-                  className="object-contain"
-                />
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>

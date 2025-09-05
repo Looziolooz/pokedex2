@@ -9,22 +9,21 @@ export default function HomePage() {
       {/* Hero Section with Random Button */}
       <HeroSection />
 
-      {/* Search Section */}
-      <section className="content-grid py-8">
-        <SearchForm redirectTo="pokedex" />
-      </section>
-
       {/* Featured Pokémon Section */}
-      <section className="content-grid py-8">
+      <section className="content-grid py-10 bg-gray-200 rounded-lg mt-20">
         <Suspense fallback={
           <div className="text-center">
             <div className="w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
             <p>Loading featured Pokémon...</p>
           </div>
         }>
-          <FeaturedList />
+          <FeaturedList />         
         </Suspense>
       </section>
+      {/* Search Section */}
+        <section className="content-grid py-10 bg-purple-200 rounded-lg mt-20">
+          <SearchForm redirectTo="pokedex" />
+        </section>
     </div>
   );
 }

@@ -7,13 +7,6 @@
   --foreground: #030303;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-jaldi: var(--font-jaldi);
-  --font-jersey: var(--font-jersey);
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -21,7 +14,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-jersey), Arial, Helvetica, sans-serif;
+  font-family: var(--font-nunito), Arial, Helvetica, sans-serif;
+  font-weight: 700;
 }
 
 /* Custom animations */
@@ -33,37 +27,6 @@ h1, h2, h3, h4, h5, h6 {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes slide-in-from-top {
-  from {
-    opacity: 0;
-    transform: translateY(-1rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -84,6 +47,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@keyframes pokeball-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Animation classes */
 .animate-in {
   animation-duration: 0.5s;
@@ -94,55 +66,9 @@ h1, h2, h3, h4, h5, h6 {
   animation-name: slide-in-from-bottom;
 }
 
-.slide-in-from-top-4 {
-  animation-name: slide-in-from-top;
-}
-
-.fade-in {
-  animation-name: fade-in;
-}
-
-.scale-in {
-  animation-name: scale-in;
-}
-
 .bounce-in {
   animation-name: bounce-in;
   animation-duration: 0.6s;
-}
-
-/* Hover animations */
-.hover-lift {
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Loading animations */
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Pokeball spin animation */
-@keyframes pokeball-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .animate-pokeball-spin {
@@ -172,20 +98,13 @@ h1, h2, h3, h4, h5, h6 {
   @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-1;
 }
 
-/* Smooth transitions */
-.smooth-transition {
-  @apply transition-all duration-300 ease-in-out;
+.hover-lift {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-/* Background patterns */
-@utility bg-pattern {
-  --s: 200px;
-  --c1: var(--color-neutral-900);
-  --c2: var(--color-neutral-500);
-  --c3: var(--color-neutral-700);
-  background: repeating-conic-gradient(from 30deg, #0000 0 120deg, var(--c3) 0 50%) calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
-    repeating-conic-gradient(from 30deg, var(--c1) 0 60deg, var(--c2) 0 120deg, var(--c3) 0 50%);
-  background-size: var(--s) calc(var(--s)*tan(30deg));
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Content grid system */
@@ -193,8 +112,8 @@ h1, h2, h3, h4, h5, h6 {
   --spacing-xl: 4rem;
   --spacing-lg: 2rem;
   --spacing-md: 1rem;
-  --spacing-sm: .5rem;
-  --spacing-xs: .25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-xs: 0.25rem;
   --content-max-width: 56.25rem;
   --breakout-max-width: 75rem;
   --padding-inline: var(--spacing-md);
