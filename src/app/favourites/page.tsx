@@ -51,43 +51,16 @@ export default function FavouritesPage() {
             No Favourites Yet!
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-md mx-auto">
-            Start exploring Pokémon and add them to your favourites collection. 
+            Start exploring Pokémon and add them to your favourites collection.
             Your favourite Pokémon will be saved here.
           </p>
           
-          <div className="bg-gray-50 rounded-lg p-8 max-w-lg mx-auto mb-8">
-            <h3 className="font-bold text-gray-800 mb-4">Coming Soon Features:</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-              <div className="flex items-center gap-2">
-                <span className="text-red-500">❤️</span>
-                <span>Add to Favourites</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-blue-500">📱</span>
-                <span>Sync Across Devices</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-green-500">📊</span>
-                <span>Favourite Stats</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-purple-500">🏷️</span>
-                <span>Custom Tags</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/pokedex" className="btn-primary">
-              🔍 Explore Pokédex
-            </Link>
-            <Link href="/types" className="btn-primary">
-              🔥 Browse by Type
-            </Link>
-            <Link href="/" className="btn-primary">
-              🎲 Try Random Pokémon
-            </Link>
-          </div>
+          <Link 
+            href="/pokedex" 
+            className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-200 transform hover:scale-105 mb-8"
+          >
+            Explore Pokédex
+          </Link>      
         </div>
       )}
     </div>

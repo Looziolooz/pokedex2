@@ -46,3 +46,52 @@ export const TYPE_COLORS: Record<string, string> = {
   ghost: 'bg-purple-800',
   steel: 'bg-gray-500',
 };
+
+export const getTypeColor = (type: string): string => {
+  const typeColors: { [key: string]: string } = {
+    fire: '#FF6B6B',
+    water: '#4ECDC4',
+    electric: '#FFD93D',
+    grass: '#6BCF7F',
+    ice: '#74C0FC',
+    fighting: '#FF8787',
+    poison: '#DA77F2',
+    ground: '#FECA57',
+    flying: '#74C0FC',
+    psychic: '#FDA7DF',
+    bug: '#82ca9d',
+    rock: '#FDCB6E',
+    ghost: '#A29BFE',
+    dragon: '#6C5CE7',
+    dark: '#636e72',
+    steel: '#ddd',
+    fairy: '#FD79A8',
+    normal: '#A8A8A8'
+  };
+  return typeColors[type] || '#A8A8A8';
+};
+
+// Funzione per ottenere colori border (versione scura)
+export  const getTypeColorBorder = (type: string): string => {
+  const typeColors: { [key: string]: string } = {
+    fire: '#FF5722',
+    water: '#2196F3',
+    electric: '#FFC107',
+    grass: '#4CAF50',
+    ice: '#03A9F4',
+    fighting: '#F44336',
+    poison: '#9C27B0',
+    ground: '#795548',
+    flying: '#607D8B',
+    psychic: '#E91E63',
+    bug: '#8BC34A',
+    rock: '#FF9800',
+    ghost: '#673AB7',
+    dragon: '#3F51B5',
+    dark: '#424242',
+    steel: '#9E9E9E',
+    fairy: '#E91E63',
+    normal: '#9E9E9E'
+  };
+  return typeColors[type] || '#9E9E9E';
+};

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { POKEMON_TYPES } from "@/lib/data/constants";
 import { PokemonTypeName } from "@/lib/types/pokemon";
+import { getTypeColor } from "@/lib/data/constants";
 
 interface TypeBadgeProps {
   type: PokemonTypeName;
@@ -18,8 +19,13 @@ export default function TypeBadge({ type, size = 'md', clickable = false }: Type
     lg: 'p-8 text-lg'
   };
 
+  const backgroundColor = getTypeColor(type);
+
   const content = (
-    <div className={`${typeInfo.bgColor} text-white rounded-lg text-center hover:scale-105 transition-transform shadow-lg ${sizeClasses[size]} ${clickable ? 'cursor-pointer' : ''}`}>
+    <div 
+      className={`text-white rounded-lg text-center hover:scale-105 transition-transform shadow-lg ${sizeClasses[size]} ${clickable ? 'cursor-pointer' : ''}`}
+      style={{ backgroundColor }}
+    >
       <div className="text-3xl mb-2">{typeInfo.emoji}</div>
       <div className="font-bold capitalize">{typeInfo.name}</div>
     </div>
